@@ -8,10 +8,10 @@ Signature interaction: a **pixel tomato mascot** that walks an animated dirt tra
 ## About the design files
 The files in this bundle are **design references built in HTML** — a working prototype of the intended look and behavior, not production code to lift wholesale.
 
-- `index.html` — bundle with JS, CSS, fonts, and static images inlined. Open it directly or deploy it as-is. Use this to test locally and to ship a first Vercel deployment. It needs the sibling `assets/` folder: the trail-walker sprites are built at runtime from the string path `assets/tomato-hero.png`, so they are not inlined and 404 if `assets/` isn't next to `index.html`.
-- `source/SQC Website.dc.html` — the authored source. One component: an inline-styled template plus a JS logic class (refs, mascot trail engine, nav, waitlist state). `source/support.js` is its runtime; `source/assets/` holds the pixel art.
+- `deploy/` — **ready to host as-is** (Cloudflare Pages or any static host). Three self-contained pages — `index.html` (home), `quest-day.html`, `gallery.html` — with JS, CSS, fonts and images inlined, plus `assets/` (required: the trail-walker and cursor sprites load `assets/tomato-hero.png` at runtime) and a Cloudflare `_headers` file.
+- `source/` — the authored source for all three pages (`SQC Website.dc.html`, `Quest Day.dc.html`, `Gallery.dc.html`). Each page is one inline-styled template plus a JS logic class. `support.js` is their runtime. Source links between pages use the `.dc.html` names; the `deploy/` copies are rewritten to `./`, `quest-day.html` and `gallery.html`.
 
-The intended task for a real codebase is to **recreate this design in the target environment** (Next.js/React is the natural fit for Vercel) using that project's conventions — components, styling layer, form handling — rather than pasting the prototype's inline styles. If there is no codebase yet, start a Next.js app and port the page section by section.
+The intended task for a real codebase is to **recreate this design in the target environment** (Astro or Next.js static export are good fits for Cloudflare Pages) using that project's conventions — components, styling layer, form handling — rather than pasting the prototype's inline styles. If there is no codebase yet, start a Next.js app and port the page section by section.
 
 ## Fidelity
 **High fidelity.** Colors, type, spacing, copy, and motion are final. Recreate pixel-for-pixel; every value you need is below or readable in the source file.
@@ -19,26 +19,18 @@ The intended task for a real codebase is to **recreate this design in the target
 ## Local test
 
 ```bash
-cd design_handoff_sqc_website
+cd design_handoff_sqc_website/deploy
 python3 -m http.server 8000      # or: npx serve .
-# open http://localhost:8000
 ```
 
-`index.html` also works from `file://`. To edit the *source* version, serve the `source/` folder the same way and open `SQC Website.dc.html`.
+## Deploy to Cloudflare Pages
 
-## Deploy to Vercel
+No build step needed.
+- **Dashboard:** Workers & Pages → Create → Pages → Upload assets → drop the `deploy/` folder.
+- **CLI:** `npx wrangler pages deploy deploy --project-name=side-quest-club`
+- **Git:** push the repo, connect it in Pages, set build command to *(none)* and output directory to `deploy`.
 
-Static, zero-config — the folder root already contains `index.html` and `vercel.json`.
-
-```bash
-cd design_handoff_sqc_website
-npx vercel            # preview
-npx vercel --prod     # production
-```
-
-Or push the folder to a Git repo and import it in the Vercel dashboard (Framework preset: **Other**, no build command, output directory `.`).
-
-For a rebuilt Next.js version, replace the root with the app and let Vercel autodetect.
+Cloudflare serves `/quest-day` and `/gallery` without the `.html` extension automatically.
 
 ## Screens / views
 
@@ -75,7 +67,7 @@ Centered, dark, checkered. 130px mascot, then VT323 lines "PILOT COHORT'S IDEAS 
 Cream card (`#FBF5E4`), dark border, hard offset shadow. Two states driven by `waitlistSent`:
 1. Form: kicker "JOIN THE WAITLIST" (`#B8492F`), H2 "Get the early news…", body copy, `EMAIL` label + `#wl-email` (`type="email" required autocomplete="email" inputmode="email"`, placeholder `you@email.com`), fine print "About one email a month. No spam, unsubscribe anytime.", submit button (`#B8492F` fill, `3px solid #2A3D2E`).
 2. Confirmation: mascot, "QUEST LOG UPDATED", "You're on the waitlist.", the submitted address echoed in `<strong>`, and a close button.
-Escape closes the modal. **No backend** — the prototype only stores the email in component state. Wire it to a real list (Vercel serverless route → Resend/Mailchimp/Sheets) during implementation.
+Escape closes the modal. **No backend** — the prototype only stores the email in component state. Wire it to a real list (a serverless function (Cloudflare Pages Function / Worker) → Resend/Mailchimp/Sheets) during implementation.
 
 ## Interactions & behavior
 - **Mascot trail.** A full-page absolute SVG (`z-index: 3`, `opacity: .5`) draws four stacked paths: hidden geometry path, brown shadow stroke (20px, `#5E4A33`, `.3`), the dirt-pattern stroke (14px, 8×8 pixel `<pattern>` in sand tones, `.72`), and a cream tint stroke (14px, `.12`). All strokes use `stroke-linecap: butt` / `linejoin: miter` for a pixel look. The viewBox is resized to the root box on mount and resize.
@@ -142,13 +134,19 @@ Fonts load from Google Fonts (`Inter:wght@300;400;600;800` + `VT323`); they are 
 ## Files
 ```
 design_handoff_sqc_website/
-├── index.html                  deployable prototype (needs ./assets)
-├── assets/*.png                runtime-loaded sprites — must sit beside index.html
-├── vercel.json                 static config
+├── README.md                   this spec
 ├── CLAUDE.md                   task brief for Claude Code
-├── README.md
+├── deploy/                     static site — upload this folder
+│   ├── index.html  quest-day.html  gallery.html
+│   ├── assets/*.png
+│   └── _headers                Cloudflare cache/security headers
 └── source/
-    ├── SQC Website.dc.html     authored source (template + logic class)
-    ├── support.js              runtime for the source file
+    ├── SQC Website.dc.html  Quest Day.dc.html  Gallery.dc.html
+    ├── support.js
     └── assets/*.png
 ```
+
+## Notes on the latest home-page changes
+- Card body copy in "Why side quests stall", the roadmap and "The party" is now two-item `<ul>` lists (`list-style: square`, `padding-left: 18px`, `gap: 4px`), marked `data-trail-avoid` so the trail routes around them.
+- Background pixel stickers are deliberately sparse: about 12–28 per section, placed on a jittered 4-column grid.
+- The tomato pauses at each roadmap checkpoint and fires a short burst of pixel confetti (26 squares, 4–8px, palette `#D5A945 #B8492F #F4EBD8 #E59BB4 #8FBF7A`, `steps(14)` easing, about 1.2s).
