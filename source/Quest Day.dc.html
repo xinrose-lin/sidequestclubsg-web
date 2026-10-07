@@ -32,11 +32,16 @@
       <img src="assets/logo-bag.png" alt="" style="height:clamp(38px,5.4vw,48px); width:auto; display:block; image-rendering:pixelated;">
       <span style="font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(14px,3vw,17px); letter-spacing:.4px; color:#F4EBD8; line-height:1;">Side Quest Club</span>
     </a>
-    <nav aria-label="Main" style="display:flex; align-items:center; justify-content:flex-end; gap:clamp(10px,1.6vw,22px);">
+    <button ref="{{ burgerRef }}" type="button" onClick="{{ toggleNav }}" aria-label="Menu" aria-controls="main-nav" aria-expanded="false" style="display:none; cursor:pointer; align-items:center; justify-content:center; gap:5px; flex-direction:column; width:46px; height:46px; background:transparent; border:2px solid #4F6F52; padding:0;" style-hover="border-color:#D5A945">
+      <span aria-hidden="true" style="display:block; width:20px; height:3px; background:#F4EBD8;"></span>
+      <span aria-hidden="true" style="display:block; width:20px; height:3px; background:#F4EBD8;"></span>
+      <span aria-hidden="true" style="display:block; width:20px; height:3px; background:#F4EBD8;"></span>
+    </button>
+    <nav id="main-nav" ref="{{ navRef }}" aria-label="Main" style="display:flex; align-items:center; justify-content:flex-end; gap:clamp(10px,1.6vw,22px);">
       <a href="SQC%20Website.dc.html" style="font-family:'Inter',sans-serif; font-weight:600; font-size:13px; letter-spacing:.4px; color:#B3C6B2; white-space:nowrap;" style-hover="color:#D5A945">Home</a>
       <span aria-current="page" style="font-family:'Inter',sans-serif; font-weight:800; font-size:13px; letter-spacing:.4px; color:#D5A945; white-space:nowrap; border-bottom:3px solid #D5A945; padding-bottom:2px;">Quest Day</span>
       <a href="Gallery.dc.html" style="font-family:'Inter',sans-serif; font-weight:600; font-size:13px; letter-spacing:.4px; color:#B3C6B2; white-space:nowrap;" style-hover="color:#D5A945">Gallery</a>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSe41BedRCd2ouJ6u03e3gESe2nb243uZAy0PdLm048At0XK0g/viewform" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; white-space:nowrap; font-family:'Inter',sans-serif; font-weight:800; font-size:13px; letter-spacing:.4px; color:#F4EBD8; background:#B8492F; border:2px solid #F4EBD8; box-shadow:2px 2px 0 #F4EBD8; padding:8px 14px; min-height:34px; line-height:1.2; transition:transform .12s ease, box-shadow .12s ease, background .12s ease;" style-hover="transform:translate(-1px,-1px); box-shadow:3px 3px 0 #F4EBD8; background:#C25233" data-sm-tight="1"><span>Join waitlist<span data-sm-hide="1"> for cohort 1</span>!!</span></a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSe41BedRCd2ouJ6u03e3gESe2nb243uZAy0PdLm048At0XK0g/viewform" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; white-space:nowrap; font-family:'Inter',sans-serif; font-weight:800; font-size:13px; letter-spacing:.4px; color:#F4EBD8; background:#B8492F; border:2px solid #F4EBD8; box-shadow:2px 2px 0 #F4EBD8; padding:8px 14px; min-height:34px; line-height:1.2; transition:transform .12s ease, box-shadow .12s ease, background .12s ease; clip-path:polygon(2px 0,calc(100% - 2px) 0,calc(100% - 2px) 2px,100% 2px,100% 4px,calc(100% + 2px) 4px,calc(100% + 2px) 100%,100% 100%,100% calc(100% + 2px),4px calc(100% + 2px),4px 100%,2px 100%,2px calc(100% - 2px),0 calc(100% - 2px),0 2px,2px 2px);" style-hover="transform:translate(-1px,-1px); box-shadow:3px 3px 0 #F4EBD8; background:#C25233" data-sm-tight="1"><span>Join waitlist<span data-sm-hide="1"> for cohort 1</span>!!</span></a>
     </nav>
   </header>
 
@@ -51,6 +56,12 @@
     <div aria-hidden="true" style="position:absolute; right:24%; bottom:8%; width:18px; height:24px; opacity:0.35; transform:rotate(-6deg);"><div style="position:absolute; left:6px; top:0px; width:6px; height:6px; background:#D5A945;"></div><div style="position:absolute; left:0px; top:6px; width:6px; height:6px; background:#B8492F;"></div><div style="position:absolute; left:12px; top:6px; width:6px; height:6px; background:#B8492F;"></div><div style="position:absolute; left:6px; top:6px; width:6px; height:6px; background:#F0DEA9;"></div><div style="position:absolute; left:6px; top:12px; width:6px; height:12px; background:#587C5A;"></div><div style="position:absolute; left:0px; top:18px; width:6px; height:6px; background:#587C5A;"></div></div>
     <div aria-hidden="true" style="position:absolute; left:4%; top:52%; width:24px; height:18px; opacity:0.3; transform:rotate(0deg);"><div style="position:absolute; left:6px; top:0px; width:12px; height:6px; background:#5C6B54;"></div><div style="position:absolute; left:0px; top:6px; width:24px; height:6px; background:#6E7E64;"></div><div style="position:absolute; left:0px; top:12px; width:18px; height:6px; background:#4A5744;"></div></div>
     <div aria-hidden="true" style="position:absolute; right:5%; bottom:34%; width:18px; height:24px; opacity:0.35; transform:rotate(10deg);"><div style="position:absolute; left:6px; top:0px; width:6px; height:6px; background:#587C5A;"></div><div style="position:absolute; left:0px; top:6px; width:18px; height:12px; background:#B8492F;"></div><div style="position:absolute; left:6px; top:6px; width:6px; height:6px; background:#D96A4A;"></div><div style="position:absolute; left:0px; top:18px; width:18px; height:6px; background:#9C3A24;"></div></div>
+
+    <!-- POLAROIDS: 2 left, 2 right. To swap a photo: overwrite the file in assets/photos/ with the SAME filename (e.g. photo-6.png), or change the img src below. To rename a caption: edit the text inside <figcaption>. Photos are cropped square (object-fit: cover); object-position sets which part stays in frame. -->
+    <figure data-desktop-only="1" style="position:absolute; left:5%; top:36%; z-index:4; margin:0; width:clamp(0px, (100vw - 1200px) * 999, 170px); overflow:hidden; transform:rotate(-5deg); transition:transform .18s ease;" style-hover="transform:rotate(0deg) translateY(-4px)"><span aria-hidden="true" style="position:absolute; left:50%; top:-9px; width:12px; height:12px; margin-left:-6px; z-index:2; background:#B8492F; box-shadow:inset -3px -3px 0 #8A3420, 3px 3px 0 rgba(8,24,15,.4);"></span><div style="border:3px solid #F4EBD8; box-shadow:5px 5px 0 #0F1A12; background:#F4EBD8; padding:5px 5px 0;"><img src="assets/photos/questday-1.jpg" alt="Cohort members celebrating at session 1" loading="lazy" style="display:block; width:100%; aspect-ratio:1 / 1; object-fit:cover; object-position:center 40%;"><figcaption style="font-family:'VT323',monospace; font-size:17px; letter-spacing:1px; color:#2A3D2E; padding:5px 2px 6px;">SIDEQUESTERS!</figcaption></div></figure>
+    <figure data-desktop-only="1" style="position:absolute; left:9%; top:60%; z-index:4; margin:0; width:clamp(0px, (100vw - 1200px) * 999, 170px); overflow:hidden; transform:rotate(4deg); transition:transform .18s ease;" style-hover="transform:rotate(0deg) translateY(-4px)"><span aria-hidden="true" style="position:absolute; left:50%; top:-9px; width:12px; height:12px; margin-left:-6px; z-index:2; background:#B8492F; box-shadow:inset -3px -3px 0 #8A3420, 3px 3px 0 rgba(8,24,15,.4);"></span><div style="border:3px solid #F4EBD8; box-shadow:5px 5px 0 #0F1A12; background:#F4EBD8; padding:5px 5px 0;"><img src="assets/photos/questday-2.jpg" alt="SQC x Theresa Syn" loading="lazy" style="display:block; width:100%; aspect-ratio:1 / 1; object-fit:cover; object-position:center 78%;"><figcaption style="font-family:'VT323',monospace; font-size:17px; letter-spacing:1px; color:#2A3D2E; padding:5px 2px 6px;">SQC X THERESA SYN!</figcaption></div></figure>
+    <figure data-desktop-only="1" style="position:absolute; right:6%; top:34%; z-index:4; margin:0; width:clamp(0px, (100vw - 1200px) * 999, 170px); overflow:hidden; transform:rotate(5deg); transition:transform .18s ease;" style-hover="transform:rotate(0deg) translateY(-4px)"><span aria-hidden="true" style="position:absolute; left:50%; top:-9px; width:12px; height:12px; margin-left:-6px; z-index:2; background:#B8492F; box-shadow:inset -3px -3px 0 #8A3420, 3px 3px 0 rgba(8,24,15,.4);"></span><div style="border:3px solid #F4EBD8; box-shadow:5px 5px 0 #0F1A12; background:#F4EBD8; padding:5px 5px 0;"><img src="assets/photos/questday-3.jpg" alt="SQC x ragTECH" loading="lazy" style="display:block; width:100%; aspect-ratio:1 / 1; object-fit:cover; object-position:center 58%;"><figcaption style="font-family:'VT323',monospace; font-size:17px; letter-spacing:1px; color:#2A3D2E; padding:5px 2px 6px;">SQC X RAGTECH!</figcaption></div></figure>
+    <figure data-desktop-only="1" style="position:absolute; right:9%; top:58%; z-index:4; margin:0; width:clamp(0px, (100vw - 1200px) * 999, 170px); overflow:hidden; transform:rotate(-4deg); transition:transform .18s ease;" style-hover="transform:rotate(0deg) translateY(-4px)"><span aria-hidden="true" style="position:absolute; left:50%; top:-9px; width:12px; height:12px; margin-left:-6px; z-index:2; background:#B8492F; box-shadow:inset -3px -3px 0 #8A3420, 3px 3px 0 rgba(8,24,15,.4);"></span><div style="border:3px solid #F4EBD8; box-shadow:5px 5px 0 #0F1A12; background:#F4EBD8; padding:5px 5px 0;"><img src="assets/photos/questday-4.jpg" alt="HTHTs" loading="lazy" style="display:block; width:100%; aspect-ratio:1 / 1; object-fit:cover; object-position:center 66%;"><figcaption style="font-family:'VT323',monospace; font-size:17px; letter-spacing:1px; color:#2A3D2E; padding:5px 2px 6px;">HTHTs :)</figcaption></div></figure>
 
     <div style="position:relative; z-index:5; max-width:1120px; margin:0 auto; display:flex; flex-direction:column; align-items:center; gap:clamp(28px,4vw,48px);">
       <div style="width:100%; max-width:760px; text-align:center;">
@@ -72,7 +83,7 @@
             <span style="position:absolute; left:0; top:54%; width:16%; height:24%; background:#B8492F;"></span>
           </span>
         </h1>
-        <p style="font-size:clamp(16px,2.1vw,20px); line-height:1.6; color:#B3C6B2; max-width:520px; margin:20px auto 0; text-wrap:pretty;">See the side quests of our pilot cohort come to life!</p>
+        <p ref="{{ subRef }}" style="font-family:'VT323',monospace; font-size:clamp(17px,2.1vw,21px); line-height:1.2; letter-spacing:1px; color:#B3C6B2; max-width:520px; min-height:2.4em; margin:20px auto 0; text-wrap:pretty;">SEE THE SIDE QUESTS OF OUR PILOT COHORT COME TO LIFE!</p>
         <sc-if value="{{ showCountdown }}" hint-placeholder-val="{{ true }}">
           <div style="margin:clamp(26px,4vh,38px) auto 0; max-width:680px;">
             <p style="font-family:'VT323',monospace; font-size:clamp(18px,2.2vw,22px); color:#93AC93; letter-spacing:1.8px; margin:0 0 12px;">HAPPENING IN</p>
@@ -87,7 +98,7 @@
           </div>
         </sc-if>
         <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:clamp(12px,2vw,18px); margin-top:clamp(26px,4vh,34px);">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScJu145SOp4CtmJv8zU8C38vMC6S4b2aGCgHKyugJb9L8fuPQ/viewform" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; cursor:pointer; font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(15px,1.8vw,17px); color:#F4EBD8; background:#B8492F; border:3px solid #F4EBD8; box-shadow:4px 4px 0 #F4EBD8; padding:12px 24px; min-height:44px; line-height:1.3; transition:transform .12s ease, box-shadow .12s ease, background .12s ease;" style-hover="transform:translate(-2px,-2px); box-shadow:6px 6px 0 #F4EBD8; background:#C25233" style-active="transform:translate(1px,1px); box-shadow:2px 2px 0 #F4EBD8">RSVP for Quest Day!!</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScJu145SOp4CtmJv8zU8C38vMC6S4b2aGCgHKyugJb9L8fuPQ/viewform" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; cursor:pointer; font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(15px,1.8vw,17px); color:#F4EBD8; background:#B8492F; border:3px solid #F4EBD8; box-shadow:4px 4px 0 #F4EBD8; padding:12px 24px; min-height:44px; line-height:1.3; transition:transform .12s ease, box-shadow .12s ease, background .12s ease; clip-path:polygon(4px 0,calc(100% - 4px) 0,calc(100% - 4px) 4px,100% 4px,100% 8px,calc(100% + 4px) 8px,calc(100% + 4px) 100%,100% 100%,100% calc(100% + 4px),8px calc(100% + 4px),8px 100%,4px 100%,4px calc(100% - 4px),0 calc(100% - 4px),0 4px,4px 4px);" style-hover="transform:translate(-2px,-2px); box-shadow:6px 6px 0 #F4EBD8; background:#C25233" style-active="transform:translate(1px,1px); box-shadow:2px 2px 0 #F4EBD8">RSVP for Quest Day!!</a>
         </div>
       </div>
 
@@ -102,12 +113,11 @@
         <p style="font-family:'VT323',monospace; font-size:22px; letter-spacing:1.4px; color:#B8492F; margin:0 0 6px;">WHERE</p>
         <p style="font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(18px,2.2vw,22px); line-height:1.2; color:#2A3D2E; margin:0;"><span style="text-transform:uppercase;">OGP</span> Office</p>
         <p style="font-size:16px; line-height:1.6; color:#566B57; margin:6px 0 0;">51 Bras Basah Rd, #04-08 Lazada One,<br>Singapore 189554</p>
-        <a href="https://maps.google.com/?q=51+Bras+Basah+Road+Lazada+One+Singapore+189554" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; margin-top:14px; font-family:'Inter',sans-serif; font-weight:600; font-size:14px; color:#B8492F; border-bottom:2px solid #B8492F; padding-bottom:1px;" style-hover="color:#2A3D2E; border-color:#2A3D2E">Open in maps &rarr;</a>
       </div>
     </div>
   </section>
 
-  <section id="agenda" aria-label="Run of show" style="position:relative; z-index:2; padding:clamp(60px,9vh,110px) clamp(20px,5vw,64px); background-color:#223327; background-image:repeating-conic-gradient(from 0deg at 50% 50%, rgba(41,92,55,.13) 0deg 90deg, transparent 90deg 180deg); background-size:32px 32px; border-top:3px solid #354B38; border-bottom:3px solid #354B38;">
+    <section id="agenda" aria-label="Run of show" style="position:relative; z-index:2; padding:clamp(60px,9vh,110px) clamp(20px,5vw,64px); background-color:#223327; background-image:repeating-conic-gradient(from 0deg at 50% 50%, rgba(41,92,55,.13) 0deg 90deg, transparent 90deg 180deg); background-size:32px 32px; border-top:3px solid #354B38; border-bottom:3px solid #354B38;">
     <div style="position:relative; z-index:5; max-width:1120px; margin:0 auto;">
       <p style="font-family:'VT323',monospace; font-size:clamp(22px,2.8vw,27px); color:#D5A945; letter-spacing:1.6px; margin:0;">RUN OF SHOW</p>
 
@@ -116,20 +126,19 @@
           <p style="font-family:'VT323',monospace; font-size:clamp(26px,3.4vw,34px); letter-spacing:1px; color:#B8492F; margin:0;">1.30PM</p>
           <div>
             <p style="font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(17px,2vw,21px); color:#2A3D2E; margin:0;">Doors open</p>
-            <p style="font-size:15px; line-height:1.55; color:#566B57; margin:5px 0 0;">Come say hi!</p>
           </div>
         </div>
         <div style="display:grid; grid-template-columns:minmax(96px,140px) 1fr; gap:clamp(14px,2.4vw,26px); align-items:center; background:#FBF5E4; border:3px solid #2A3D2E; box-shadow:5px 5px 0 rgba(8,24,15,.35); padding:clamp(16px,2.4vw,22px) clamp(16px,2.6vw,26px);">
           <p style="font-family:'VT323',monospace; font-size:clamp(26px,3.4vw,34px); letter-spacing:1px; color:#B8492F; margin:0;">2.00PM</p>
           <div>
-            <p style="font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(17px,2vw,21px); color:#2A3D2E; margin:0;">Side quest sharings and exhibitions</p>
+            <p style="font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(17px,2vw,21px); color:#2A3D2E; margin:0;">Side quest sharings</p>
           </div>
         </div>
         <div style="display:grid; grid-template-columns:minmax(96px,140px) 1fr; gap:clamp(14px,2.4vw,26px); align-items:center; background:#E7DEB4; border:3px solid #2A3D2E; box-shadow:5px 5px 0 rgba(8,24,15,.35); padding:clamp(16px,2.4vw,22px) clamp(16px,2.6vw,26px);">
-          <p style="font-family:'VT323',monospace; font-size:clamp(26px,3.4vw,34px); letter-spacing:1px; color:#B8492F; margin:0;">4.00PM</p>
+          <p style="font-family:'VT323',monospace; font-size:clamp(26px,3.4vw,34px); letter-spacing:1px; color:#B8492F; margin:0;">3.20PM</p>
           <div>
-            <p style="font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(17px,2vw,21px); color:#2A3D2E; margin:0;">Open networking</p>
-            <p style="font-size:15px; line-height:1.55; color:#566B57; margin:5px 0 0;">Stay on and connect! Doors close at 4.30pm.</p>
+            <p style="font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(17px,2vw,21px); color:#2A3D2E; margin:0;">Exhibitions and networking!</p>
+            <p style="font-size:15px; line-height:1.55; color:#566B57; margin:5px 0 0;">Doors close at 4.30pm.</p>
           </div>
         </div>
       </div>
@@ -157,11 +166,11 @@
     </div>
   </section>
 
-  <section id="rsvp" aria-labelledby="rsvp-title" style="position:relative; z-index:2; overflow:hidden; text-align:center; padding:clamp(70px,11vh,140px) clamp(20px,5vw,64px) clamp(50px,7vh,80px); background-color:#223327; background-image:repeating-conic-gradient(from 0deg at 50% 50%, rgba(41,92,55,.13) 0deg 90deg, transparent 90deg 180deg); background-size:32px 32px; border-top:3px solid #354B38;">
+  <section id="rsvp" aria-label="RSVP" style="position:relative; z-index:2; overflow:hidden; text-align:center; padding:clamp(70px,11vh,140px) clamp(20px,5vw,64px) clamp(50px,7vh,80px); background-color:#223327; background-image:repeating-conic-gradient(from 0deg at 50% 50%, rgba(41,92,55,.13) 0deg 90deg, transparent 90deg 180deg); background-size:32px 32px; border-top:3px solid #354B38;">
     <div style="position:relative; z-index:5; max-width:720px; margin:0 auto; display:flex; flex-direction:column; align-items:center; gap:20px;">
       <img src="assets/tomato-hero.png" alt="" style="width:clamp(96px,14vw,130px); height:auto; image-rendering:pixelated;">
-      <p id="rsvp-title" style="font-family:'VT323',monospace; font-size:clamp(22px,2.8vw,27px); color:#D5A945; letter-spacing:1.6px; margin:0;">SEATS ARE LIMITED &mdash; THE ROOM IS SMALL!</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLScJu145SOp4CtmJv8zU8C38vMC6S4b2aGCgHKyugJb9L8fuPQ/viewform" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; cursor:pointer; font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(16px,2vw,19px); color:#F4EBD8; background:#B8492F; border:3px solid #F4EBD8; box-shadow:5px 5px 0 #F4EBD8; padding:14px 28px; min-height:48px; line-height:1.3; transition:transform .12s ease, box-shadow .12s ease, background .12s ease;" style-hover="transform:translate(-2px,-2px); box-shadow:7px 7px 0 #F4EBD8; background:#C25233" style-active="transform:translate(1px,1px); box-shadow:3px 3px 0 #F4EBD8">RSVP for Quest Day!!</a>
+      <p style="font-family:'VT323',monospace; font-size:clamp(24px,3vw,30px); color:#D5A945; letter-spacing:1.6px; margin:0;">LOOKING FORWARD TO SEE YOU THERE!</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScJu145SOp4CtmJv8zU8C38vMC6S4b2aGCgHKyugJb9L8fuPQ/viewform" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; cursor:pointer; font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(16px,2vw,19px); color:#F4EBD8; background:#B8492F; border:3px solid #F4EBD8; box-shadow:5px 5px 0 #F4EBD8; padding:14px 28px; min-height:48px; line-height:1.3; transition:transform .12s ease, box-shadow .12s ease, background .12s ease; clip-path:polygon(5px 0,calc(100% - 5px) 0,calc(100% - 5px) 5px,100% 5px,100% 10px,calc(100% + 5px) 10px,calc(100% + 5px) 100%,100% 100%,100% calc(100% + 5px),10px calc(100% + 5px),10px 100%,5px 100%,5px calc(100% - 5px),0 calc(100% - 5px),0 5px,5px 5px);" style-hover="transform:translate(-2px,-2px); box-shadow:7px 7px 0 #F4EBD8; background:#C25233" style-active="transform:translate(1px,1px); box-shadow:3px 3px 0 #F4EBD8">RSVP for Quest Day!!</a>
     </div>
     <footer style="position:relative; z-index:5; margin-top:clamp(56px,9vh,90px); padding-top:26px; border-top:2px solid #354B38; display:flex; gap:14px; flex-wrap:wrap; align-items:center; justify-content:center;">
       <p style="font-family:'Inter',sans-serif; font-weight:300; font-size:13px; color:#93AC93; line-height:2; margin:0;">FIND YOUR OWN PATH &middot; @SIDEQUESTCLUBSG</p>
@@ -171,11 +180,54 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;showCountdown&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Quest Day&quot;},&quot;showMascot&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Quest Day&quot;}}">
 class Component extends DCLogic {
-  state = { now: Date.now() };
+  state = { now: Date.now(), navOpen: false };
+  navRef = React.createRef();
+  subRef = React.createRef();
+  enterPolaroids() {
+    const figs = [...document.querySelectorAll('#top figure[data-desktop-only]')];
+    if (!figs.length || !figs[0].animate || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    figs.forEach((f, i) => {
+      const fromLeft = !!f.style.left;
+      const dx = fromLeft ? -320 : 320, tilt = fromLeft ? -14 : 14;
+      f.style.opacity = '0';
+      const a = f.animate([
+        { translate: dx + 'px 0', rotate: tilt + 'deg', scale: '.8', opacity: 0 },
+        { translate: (fromLeft ? 12 : -12) + 'px 0', rotate: (-tilt / 4) + 'deg', scale: '1.08', opacity: 1, offset: .65 },
+        { translate: '0 0', rotate: '0deg', scale: '1', opacity: 1 }
+      ], { duration: 850, delay: 700 + i * 220, easing: 'cubic-bezier(.2,.8,.3,1)', fill: 'both' });
+      a.onfinish = () => { f.style.opacity = '1'; a.cancel(); };
+    });
+  }
+  typeSub() {
+    const el = this.subRef.current; if (!el) return;
+    const t = el.textContent;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    el.setAttribute('aria-label', t); el.textContent = '\u00a0';
+    let i = 0;
+    const tick = () => { if (!el.isConnected) return; i++; el.textContent = t.slice(0, i); if (i < t.length) this.subTimer = setTimeout(tick, 34 + Math.random() * 34); };
+    this.subTimer = setTimeout(tick, 500);
+  }
+  burgerRef = React.createRef();
+  applyNav() {
+    const nav = this.navRef.current, burger = this.burgerRef.current;
+    if (!nav || !burger) return;
+    const narrow = window.innerWidth < 760, open = !!this.state.navOpen;
+    burger.style.display = narrow ? 'flex' : 'none';
+    burger.setAttribute('aria-expanded', String(narrow && open));
+    nav.style.cssText = narrow
+      ? 'position:absolute; left:0; right:0; top:100%; flex-direction:column; align-items:stretch; gap:0; padding:8px clamp(14px,4vw,48px) 18px; background:rgba(14,36,23,.98); border-bottom:3px solid #354B38; display:' + (open ? 'flex' : 'none') + ';'
+      : 'display:flex; align-items:center; justify-content:flex-end; gap:clamp(10px,1.6vw,22px);';
+    nav.querySelectorAll(':scope > a:not([target]), :scope > span').forEach(el => { el.style.padding = narrow ? '13px 0' : ''; el.style.fontSize = narrow ? '16px' : ''; el.style.borderBottom = narrow && el.getAttribute('aria-current') ? '' : (el.getAttribute('aria-current') ? '' : el.style.borderBottom); });
+    const j = nav.querySelector(':scope > a[target]'); if (j) j.style.alignSelf = narrow ? 'flex-start' : '';
+  }
+  componentDidUpdate() { this.applyNav(); }
   componentDidMount() {
+    setTimeout(() => this.typeSub(), 0);
+    setTimeout(() => this.enterPolaroids(), 0);
+    this.onNavResize = () => this.applyNav(); window.addEventListener('resize', this.onNavResize); this.applyNav();
     this.timer = setInterval(() => this.setState({ now: Date.now() }), 1000);
   }
-  componentWillUnmount() { clearInterval(this.timer); }
+  componentWillUnmount() { clearInterval(this.timer); clearTimeout(this.subTimer); window.removeEventListener('resize', this.onNavResize); }
   renderVals() {
     const target = new Date('2026-10-17T13:30:00+08:00').getTime();
     let ms = target - this.state.now;
@@ -187,6 +239,8 @@ class Component extends DCLogic {
     const m = Math.floor(ms / 60000) % 60;
     const s = Math.floor(ms / 1000) % 60;
     return {
+      navRef: this.navRef, subRef: this.subRef, burgerRef: this.burgerRef,
+      toggleNav: () => this.setState(st => ({ navOpen: !st.navOpen })),
       showCountdown: this.props.showCountdown ?? true,
       showMascot: this.props.showMascot ?? true,
       countdownLabel: past ? 'THAT WAS FUN \u2014 SEE YOU AT THE NEXT ONE' : 'TILL QUEST DAY!',

@@ -8,8 +8,9 @@ Signature interaction: a **pixel tomato mascot** that walks an animated dirt tra
 ## About the design files
 The files in this bundle are **design references built in HTML** — a working prototype of the intended look and behavior, not production code to lift wholesale.
 
-- `deploy/` — **ready to host as-is** (Cloudflare Pages or any static host). Three self-contained pages — `index.html` (home), `quest-day.html`, `gallery.html` — with JS, CSS, fonts and images inlined, plus `assets/` (required: the trail-walker and cursor sprites load `assets/tomato-hero.png` at runtime) and a Cloudflare `_headers` file.
-- `source/` — the authored source for all three pages (`SQC Website.dc.html`, `Quest Day.dc.html`, `Gallery.dc.html`). Each page is one inline-styled template plus a JS logic class. `support.js` is their runtime. Source links between pages use the `.dc.html` names; the `deploy/` copies are rewritten to `./`, `quest-day.html` and `gallery.html`.
+- `deploy/` — **host as-is** (Cloudflare Pages or any static host): `index.html`, `quest-day.html`, `support.js` (runtime, required), `assets/` (logos, tomato sprites, `photos/`) and `_headers`. Photos stay separate files so you can swap them. The Gallery is currently hidden (parked in `parked/`); see `HIDE-GALLERY.md` to unhide it.
+- `source/` — authored source of all three pages.
+- `PHOTOS.md` — which file to replace for each polaroid.
 
 The intended task for a real codebase is to **recreate this design in the target environment** (Astro or Next.js static export are good fits for Cloudflare Pages) using that project's conventions — components, styling layer, form handling — rather than pasting the prototype's inline styles. If there is no codebase yet, start a Next.js app and port the page section by section.
 

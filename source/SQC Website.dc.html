@@ -67,7 +67,7 @@
     </div>
   </div>
 
-  <button ref="{{ stopRef }}" type="button" onClick="{{ onStop }}" style="display:none; position:fixed; right:clamp(14px,3vw,28px); bottom:clamp(14px,3vw,28px); z-index:30; cursor:pointer; font-family:'Inter',sans-serif; font-weight:300; font-size:13px; color:#F4EBD8; background:#2A3D2E; border:3px solid #F4EBD8; box-shadow:4px 4px 0 rgba(12,32,20,.4); padding:13px 15px; letter-spacing:1px; transition:transform .12s ease, box-shadow .12s ease;" style-hover="transform:translate(-2px,-2px); box-shadow:6px 6px 0 rgba(12,32,20,.45); color:#D5A945">STOP FOLLOWING ✕</button>
+  <button ref="{{ stopRef }}" type="button" onClick="{{ onStop }}" style="display:none; position:fixed; right:clamp(14px,3vw,28px); bottom:clamp(14px,3vw,28px); z-index:30; cursor:pointer; font-family:'Inter',sans-serif; font-weight:300; font-size:13px; color:#F4EBD8; background:#2A3D2E; border:3px solid #F4EBD8; box-shadow:4px 4px 0 rgba(12,32,20,.4); padding:13px 15px; letter-spacing:1px; transition:transform .12s ease, box-shadow .12s ease; clip-path:polygon(4px 0,calc(100% - 4px) 0,calc(100% - 4px) 4px,100% 4px,100% 8px,calc(100% + 4px) 8px,calc(100% + 4px) 100%,100% 100%,100% calc(100% + 4px),8px calc(100% + 4px),8px 100%,4px 100%,4px calc(100% - 4px),0 calc(100% - 4px),0 4px,4px 4px);" style-hover="transform:translate(-2px,-2px); box-shadow:6px 6px 0 rgba(12,32,20,.45); color:#D5A945">STOP FOLLOWING ✕</button>
 
   <header style="position:sticky; top:0; z-index:20; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:clamp(10px,2vw,14px) clamp(14px,4vw,48px); background:rgba(14,36,23,.92); backdrop-filter:blur(6px); border-bottom:3px solid #354B38;">
     <a href="#top" style="display:flex; align-items:center; gap:10px;">
@@ -84,7 +84,7 @@
     <nav id="main-nav" ref="{{ navRef }}" aria-label="Main" style="display:flex; align-items:center; justify-content:flex-end; gap:clamp(10px,1.6vw,22px);">
       <a href="Quest%20Day.dc.html" onClick="{{ closeNav }}" style="font-family:'Inter',sans-serif; font-weight:800; font-size:13px; letter-spacing:.4px; color:#D5A945; white-space:nowrap;" style-hover="color:#F4EBD8">Quest Day</a>
       <a href="Gallery.dc.html" onClick="{{ closeNav }}" style="font-family:'Inter',sans-serif; font-weight:600; font-size:13px; letter-spacing:.4px; color:#B3C6B2; white-space:nowrap;" style-hover="color:#D5A945">Gallery</a>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSe41BedRCd2ouJ6u03e3gESe2nb243uZAy0PdLm048At0XK0g/viewform" target="_blank" rel="noopener" onClick="{{ closeNav }}" style="display:inline-flex; align-items:center; text-decoration:none; cursor:pointer; white-space:nowrap; font-family:'Inter',sans-serif; font-weight:800; font-size:13px; letter-spacing:.4px; color:#F4EBD8; background:#B8492F; border:2px solid #F4EBD8; box-shadow:2px 2px 0 #F4EBD8; padding:8px 14px; min-height:34px; line-height:1.2; transition:transform .12s ease, box-shadow .12s ease, background .12s ease;" style-hover="transform:translate(-1px,-1px); box-shadow:3px 3px 0 #F4EBD8; background:#C25233" data-sm-tight="1">Join waitlist<span data-sm-hide="1">&nbsp;for cohort 1</span>!!</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSe41BedRCd2ouJ6u03e3gESe2nb243uZAy0PdLm048At0XK0g/viewform" target="_blank" rel="noopener" onClick="{{ closeNav }}" style="display:inline-flex; align-items:center; text-decoration:none; cursor:pointer; white-space:nowrap; font-family:'Inter',sans-serif; font-weight:800; font-size:13px; letter-spacing:.4px; color:#F4EBD8; background:#B8492F; border:2px solid #F4EBD8; box-shadow:2px 2px 0 #F4EBD8; padding:8px 14px; min-height:34px; line-height:1.2; transition:transform .12s ease, box-shadow .12s ease, background .12s ease; clip-path:polygon(2px 0,calc(100% - 2px) 0,calc(100% - 2px) 2px,100% 2px,100% 4px,calc(100% + 2px) 4px,calc(100% + 2px) 100%,100% 100%,100% calc(100% + 2px),4px calc(100% + 2px),4px 100%,2px 100%,2px calc(100% - 2px),0 calc(100% - 2px),0 2px,2px 2px);" style-hover="transform:translate(-1px,-1px); box-shadow:3px 3px 0 #F4EBD8; background:#C25233" data-sm-tight="1">Join waitlist<span data-sm-hide="1">&nbsp;for cohort 1</span>!!</a>
     </nav>
   </header>
 
@@ -197,11 +197,13 @@
         </div>
         <img ref="{{ perchRef }}" src="assets/tomato-hero.png" alt="" aria-hidden="true" style="position:absolute; left:50%; bottom:100%; z-index:8; pointer-events:none; width:88px; height:auto; margin-left:-44px; margin-bottom:14px; image-rendering:pixelated; animation:sqcBob 2.6s ease-in-out infinite; filter:drop-shadow(0 6px 0 rgba(8,24,15,.35));">
         <div ref="{{ startRef }}" style="position:relative; z-index:6; display:flex; flex-wrap:wrap; gap:clamp(14px,2.4vw,22px); justify-content:center;">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScJu145SOp4CtmJv8zU8C38vMC6S4b2aGCgHKyugJb9L8fuPQ/viewform" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; text-decoration:none; cursor:pointer; font-family:'Inter',sans-serif; font-weight:800; font-size:15px; color:#F4EBD8; background:#B8492F; border:3px solid #F4EBD8; box-shadow:4px 4px 0 #F4EBD8; padding:9px 22px; letter-spacing:0; min-height:40px; line-height:1.3; transition:transform .12s ease, box-shadow .12s ease, background .12s ease;" style-hover="transform:translate(-2px,-2px); box-shadow:6px 6px 0 #F4EBD8; background:#C25233" style-active="transform:translate(1px,1px); box-shadow:2px 2px 0 #F4EBD8">RSVP for Quest Day!!</a>
-          <button type="button" onClick="{{ openWaitlist }}" style="cursor:pointer; font-family:'Inter',sans-serif; font-weight:800; font-size:15px; color:#F4EBD8; background:transparent; border:3px solid #F4EBD8; box-shadow:4px 4px 0 rgba(244,236,214,.35); padding:9px 22px; letter-spacing:0; min-height:40px; line-height:1.3; transition:transform .12s ease, box-shadow .12s ease, background .12s ease;" style-hover="transform:translate(-2px,-2px); box-shadow:6px 6px 0 rgba(244,236,214,.55); background:rgba(244,236,214,.12)" style-active="transform:translate(2px,2px); box-shadow:2px 2px 0 rgba(244,236,214,.35)">Join waitlist!!</button>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScJu145SOp4CtmJv8zU8C38vMC6S4b2aGCgHKyugJb9L8fuPQ/viewform" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; text-decoration:none; cursor:pointer; font-family:'Inter',sans-serif; font-weight:800; font-size:15px; color:#F4EBD8; background:#B8492F; border:3px solid #F4EBD8; box-shadow:4px 4px 0 #F4EBD8; padding:9px 22px; letter-spacing:0; min-height:40px; line-height:1.3; transition:transform .12s ease, box-shadow .12s ease, background .12s ease; clip-path:polygon(4px 0,calc(100% - 4px) 0,calc(100% - 4px) 4px,100% 4px,100% 8px,calc(100% + 4px) 8px,calc(100% + 4px) 100%,100% 100%,100% calc(100% + 4px),8px calc(100% + 4px),8px 100%,4px 100%,4px calc(100% - 4px),0 calc(100% - 4px),0 4px,4px 4px);" style-hover="transform:translate(-2px,-2px); box-shadow:6px 6px 0 #F4EBD8; background:#C25233" style-active="transform:translate(1px,1px); box-shadow:2px 2px 0 #F4EBD8">RSVP for Quest Day!!</a>
+          <button type="button" onClick="{{ openWaitlist }}" style="cursor:pointer; font-family:'Inter',sans-serif; font-weight:800; font-size:15px; color:#F4EBD8; background:transparent; border:3px solid #F4EBD8; box-shadow:4px 4px 0 rgba(244,236,214,.35); padding:9px 22px; letter-spacing:0; min-height:40px; line-height:1.3; transition:transform .12s ease, box-shadow .12s ease, background .12s ease; clip-path:polygon(4px 0,calc(100% - 4px) 0,calc(100% - 4px) 4px,100% 4px,100% 8px,calc(100% + 4px) 8px,calc(100% + 4px) 100%,100% 100%,100% calc(100% + 4px),8px calc(100% + 4px),8px 100%,4px 100%,4px calc(100% - 4px),0 calc(100% - 4px),0 4px,4px 4px);" style-hover="transform:translate(-2px,-2px); box-shadow:6px 6px 0 rgba(244,236,214,.55); background:rgba(244,236,214,.12)" style-active="transform:translate(2px,2px); box-shadow:2px 2px 0 rgba(244,236,214,.35)">Join waitlist!!</button>
         </div>
       </div>
-      <p ref="{{ hintRef }}" data-desktop-only="1" style="font-family:'VT323',monospace; font-size:19px; letter-spacing:.6px; color:#B3C6B2; line-height:1.35; margin:22px 0 0;">SCROLL - WATCH KETCHUP FIND ITS OWN PATH!</p>
+      <p ref="{{ hint1Ref }}" data-desktop-only="1" style="font-family:'VT323',monospace; font-size:19px; letter-spacing:.6px; color:#B3C6B2; line-height:1.35; margin:22px 0 0;">THERE ARE MANY PRESET PATHS IN THIS WORLD ...</p>
+      <p ref="{{ hintRef }}" data-desktop-only="1" style="font-family:'VT323',monospace; font-size:19px; letter-spacing:.6px; color:#B3C6B2; line-height:1.35; margin:2px 0 0;">BUT WATCH KETCHUP FIND ITS OWN PATH!</p>
+      <p ref="{{ hint2Ref }}" aria-hidden="true" data-desktop-only="1" style="font-family:'VT323',monospace; font-size:32px; line-height:1; color:#D5A945; margin:6px 0 0;">&#8595;</p>
     </div>
 
     <div aria-hidden="true" style="position:absolute; inset:0; z-index:1; overflow:hidden; pointer-events:none;">
@@ -308,6 +310,7 @@
 
       <ol style="list-style:none; margin:clamp(60px,9vh,110px) 0 0; padding:0; display:flex; flex-direction:column; gap:clamp(44px,7vh,90px);">
         <li data-quest-anchor="right" style="position:relative; z-index:6; width:min(500px,100%); margin-right:auto;">
+          <figure data-trail-avoid="1" data-desktop-only="1" style="position:absolute; left:calc(100% + clamp(60px,8vw,170px)); top:50%; margin:-150px 0 0; padding:30px 0; width:min(clamp(0px, (100vw - 860px) * 999, 250px), calc(100vw - 680px)); overflow:hidden; transform:rotate(2deg); transition:transform .18s ease;" style-hover="transform:rotate(0deg) translateY(-5px)"><div style="border:3px solid #F4EBD8; box-shadow:6px 6px 0 #0F1A12; background:#F4EBD8; padding:6px 6px 0;"><img src="assets/photos/home-week-1.jpg" alt="Cohort at the first session" loading="lazy" style="display:block; width:100%; aspect-ratio:4 / 3; object-fit:cover; object-position:center 60%;"><figcaption style="font-family:'VT323',monospace; font-size:20px; letter-spacing:1.2px; color:#2A3D2E; line-height:1.1; padding:8px 4px 12px; text-wrap:balance;">QUEST V0 SCOPING!</figcaption></div></figure>
           <article tabindex="0" style="position:relative; z-index:5; background:#FBF5E4; border:4px solid #2A3D2E; box-shadow:9px 9px 0 rgba(8,24,15,.45); padding:clamp(22px,3.4vw,32px); transition:transform .18s ease, box-shadow .18s ease;" style-hover="transform:translate(-4px,-4px); box-shadow:14px 14px 0 rgba(8,24,15,.5)" style-focus="transform:translate(-4px,-4px); box-shadow:14px 14px 0 rgba(8,24,15,.5)">
             <div style="display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;">
               <span style="font-family:'VT323',monospace; font-size:19px; letter-spacing:1px; color:#F4EBD8; background:#2A3D2E; padding:5px 11px;">WEEK 1</span>
@@ -322,6 +325,7 @@
         </li>
 
         <li data-quest-anchor="left" style="position:relative; z-index:6; width:min(500px,100%); margin-left:auto;">
+          <figure data-trail-avoid="1" data-desktop-only="1" style="position:absolute; right:calc(100% + (min(1120px, 100vw - 2 * clamp(20px,5vw,64px)) - 500px - min(300px, 100vw - 680px)) / 2); top:50%; margin:-150px 0 0; padding:30px 0; width:min(clamp(0px, (100vw - 860px) * 999, 250px), calc(100vw - 680px)); overflow:hidden; transform:rotate(-2deg); transition:transform .18s ease;" style-hover="transform:rotate(0deg) translateY(-5px)"><div style="border:3px solid #F4EBD8; box-shadow:6px 6px 0 #0F1A12; background:#F4EBD8; padding:6px 6px 0;"><img src="assets/photos/home-week-2.jpg" alt="Find your audience session" loading="lazy" style="display:block; width:100%; aspect-ratio:4 / 3; object-fit:cover; object-position:center 62%;"><figcaption style="font-family:'VT323',monospace; font-size:20px; letter-spacing:1.2px; color:#2A3D2E; line-height:1.1; padding:8px 4px 12px; text-wrap:balance;">IDEAS PITCH</figcaption></div></figure>
           <article tabindex="0" style="position:relative; z-index:5; background:#FBF5E4; border:4px solid #2A3D2E; box-shadow:9px 9px 0 rgba(8,24,15,.45); padding:clamp(22px,3.4vw,32px); transition:transform .18s ease, box-shadow .18s ease;" style-hover="transform:translate(-4px,-4px); box-shadow:14px 14px 0 rgba(8,24,15,.5)" style-focus="transform:translate(-4px,-4px); box-shadow:14px 14px 0 rgba(8,24,15,.5)">
             <div style="display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;">
               <span style="font-family:'VT323',monospace; font-size:19px; letter-spacing:1px; color:#F4EBD8; background:#2A3D2E; padding:5px 11px;">WEEK 2</span>
@@ -336,6 +340,7 @@
         </li>
 
         <li data-quest-anchor="right" style="position:relative; z-index:6; width:min(500px,100%); margin-right:auto;">
+          <figure data-trail-avoid="1" data-desktop-only="1" style="position:absolute; left:calc(100% + clamp(60px,8vw,170px)); top:50%; margin:-150px 0 0; padding:30px 0; width:min(clamp(0px, (100vw - 860px) * 999, 250px), calc(100vw - 680px)); overflow:hidden; transform:rotate(1.5deg); transition:transform .18s ease;" style-hover="transform:rotate(0deg) translateY(-5px)"><div style="border:3px solid #F4EBD8; box-shadow:6px 6px 0 #0F1A12; background:#F4EBD8; padding:6px 6px 0;"><img src="assets/photos/home-week-3.jpg" alt="Fireside chat with the ragTECH team" loading="lazy" style="display:block; width:100%; aspect-ratio:4 / 3; object-fit:cover; object-position:center;"><figcaption style="font-family:'VT323',monospace; font-size:20px; letter-spacing:1.2px; color:#2A3D2E; line-height:1.1; padding:8px 4px 12px; text-wrap:balance;">FIRESIDE CHAT</figcaption></div></figure>
           <article tabindex="0" style="position:relative; z-index:5; background:#FBF5E4; border:4px solid #2A3D2E; box-shadow:9px 9px 0 rgba(8,24,15,.45); padding:clamp(22px,3.4vw,32px); transition:transform .18s ease, box-shadow .18s ease;" style-hover="transform:translate(-4px,-4px); box-shadow:14px 14px 0 rgba(8,24,15,.5)" style-focus="transform:translate(-4px,-4px); box-shadow:14px 14px 0 rgba(8,24,15,.5)">
             <div style="display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;">
               <span style="font-family:'VT323',monospace; font-size:19px; letter-spacing:1px; color:#F4EBD8; background:#2A3D2E; padding:5px 11px;">WEEK 3</span>
@@ -350,6 +355,7 @@
         </li>
 
         <li data-quest-anchor="left" style="position:relative; z-index:6; width:min(500px,100%); margin-left:auto;">
+          <figure data-trail-avoid="1" data-desktop-only="1" style="position:absolute; right:calc(100% + clamp(80px,11vw,220px)); top:50%; margin:-150px 0 0; padding:30px 0; width:min(clamp(0px, (100vw - 860px) * 999, 250px), calc(100vw - 680px)); overflow:hidden; transform:rotate(-2deg); transition:transform .18s ease;" style-hover="transform:rotate(0deg) translateY(-5px)"><div style="border:3px solid #F4EBD8; box-shadow:6px 6px 0 #0F1A12; background:#F4EBD8; padding:6px 6px 0;"><img src="assets/photos/home-week-4.jpg" alt="Ideas pitch session collage" loading="lazy" style="display:block; width:100%; aspect-ratio:4 / 3; object-fit:cover;"><figcaption style="font-family:'VT323',monospace; font-size:20px; letter-spacing:1.2px; color:#2A3D2E; line-height:1.1; padding:8px 4px 12px; text-wrap:balance;">FIND YOUR AUDIENCE!</figcaption></div></figure>
           <article tabindex="0" style="position:relative; z-index:5; background:#FBF5E4; border:4px solid #2A3D2E; box-shadow:9px 9px 0 rgba(8,24,15,.45); padding:clamp(22px,3.4vw,32px); transition:transform .18s ease, box-shadow .18s ease;" style-hover="transform:translate(-4px,-4px); box-shadow:14px 14px 0 rgba(8,24,15,.5)" style-focus="transform:translate(-4px,-4px); box-shadow:14px 14px 0 rgba(8,24,15,.5)">
             <div style="display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;">
               <span style="font-family:'VT323',monospace; font-size:19px; letter-spacing:1px; color:#F4EBD8; background:#2A3D2E; padding:5px 11px;">WEEK 4</span>
@@ -363,12 +369,13 @@
         </li>
 
         <li data-quest-anchor="right" style="position:relative; z-index:6; width:min(560px,100%); margin-right:auto;">
+          <figure data-trail-avoid="1" data-desktop-only="1" style="position:absolute; left:calc(100% + clamp(40px,6vw,130px)); top:50%; margin:-150px 0 0; padding:30px 0; width:min(clamp(0px, (100vw - 860px) * 999, 250px), calc(100vw - 680px)); overflow:hidden; transform:rotate(2deg); transition:transform .18s ease;" style-hover="transform:rotate(0deg) translateY(-5px)"><div style="border:3px solid #F4EBD8; box-shadow:6px 6px 0 #0F1A12; background:#F4EBD8; padding:6px 6px 0;"><img src="assets/photos/home-week-5.png" alt="Quest Day photo placeholder" loading="lazy" style="display:block; width:100%; aspect-ratio:4 / 3; object-fit:cover;"><figcaption style="font-family:'VT323',monospace; font-size:20px; letter-spacing:1.2px; color:#2A3D2E; line-height:1.1; padding:8px 4px 12px; text-wrap:balance;">COMING SOON ON 17 OCT!</figcaption></div></figure>
           <article tabindex="0" style="position:relative; z-index:5; background:#2A3D2E; border:4px solid #2A3D2E; box-shadow:9px 9px 0 rgba(8,24,15,.45); padding:clamp(22px,3.4vw,32px); transition:transform .18s ease, box-shadow .18s ease;" style-hover="transform:translate(-4px,-4px); box-shadow:14px 14px 0 rgba(8,24,15,.5)" style-focus="transform:translate(-4px,-4px); box-shadow:14px 14px 0 rgba(8,24,15,.5)">
             <div style="display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;">
               <span style="font-family:'VT323',monospace; font-size:19px; letter-spacing:1px; color:#2A3D2E; background:#D5A945; padding:5px 11px;">WEEK 5</span>
             </div>
             <h3 style="font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(21px,2.9vw,34px); line-height:1.15; color:#F4EBD8; margin:18px 0 0;">Quest day !!</h3>
-            <ul data-trail-avoid="1" style="font-size:16px; line-height:1.6; color:#B3C6B2; margin:12px 0 0; padding:0 0 0 18px; list-style:square; display:grid; gap:4px; text-wrap:pretty;"><li>Not a competition, it's your idea's birthday</li><li>An open exhibition for friends and strangers :)</li></ul>
+            <ul data-trail-avoid="1" style="font-size:16px; line-height:1.6; color:#B3C6B2; margin:12px 0 0; padding:0 0 0 18px; list-style:square; display:grid; gap:4px; text-wrap:pretty;"><li>It's your idea's birthday!!</li><li>Share the pride and joy :))</li></ul>
             <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:20px;">
               <span style="font-family:'Inter',sans-serif; font-weight:300; font-size:12px; color:#D5A945; border:2px solid #4F6F52; padding:7px 9px;">PUBLIC SHOWCASE</span>
             </div>
@@ -438,10 +445,9 @@
     <div style="position:relative; z-index:5; max-width:720px; margin:0 auto; display:flex; flex-direction:column; align-items:center; gap:20px;">
       <img src="assets/tomato-hero.png" alt="" style="width:clamp(96px,14vw,130px); height:auto; image-rendering:pixelated;">
       <p id="join-title" style="font-family:'VT323',monospace; font-size:clamp(22px,2.8vw,27px); color:#D5A945; letter-spacing:1.6px; margin:0;">PILOT COHORT'S IDEAS ARE BREWING…</p>
-      <p style="font-family:'VT323',monospace; font-size:clamp(20px,2.6vw,25px); color:#B3C6B2; letter-spacing:1px; margin:0;">STAY TUNED!</p>
       <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center;">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScJu145SOp4CtmJv8zU8C38vMC6S4b2aGCgHKyugJb9L8fuPQ/viewform" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; text-decoration:none; cursor:pointer; font-family:'Inter',sans-serif; font-weight:800; font-size:15px; color:#F4EBD8; background:#B8492F; border:3px solid #F4EBD8; box-shadow:4px 4px 0 #F4EBD8; padding:9px 22px; letter-spacing:0; min-height:40px; line-height:1.3; transition:transform .12s ease, box-shadow .12s ease, background .12s ease;" style-hover="transform:translate(-2px,-2px); box-shadow:6px 6px 0 #F4EBD8; background:#C25233" style-active="transform:translate(1px,1px); box-shadow:2px 2px 0 #F4EBD8">RSVP for Quest Day!!</a>
-        <button type="button" onClick="{{ openWaitlist }}" style="cursor:pointer; font-family:'Inter',sans-serif; font-weight:800; font-size:15px; color:#F4EBD8; background:transparent; border:3px solid #F4EBD8; box-shadow:4px 4px 0 rgba(244,236,214,.35); padding:9px 22px; letter-spacing:0; min-height:40px; line-height:1.3; transition:transform .12s ease, box-shadow .12s ease, background .12s ease;" style-hover="transform:translate(-2px,-2px); box-shadow:6px 6px 0 rgba(244,236,214,.55); background:rgba(244,236,214,.12)" style-active="transform:translate(2px,2px); box-shadow:2px 2px 0 rgba(244,236,214,.35)">Join waitlist!!</button>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScJu145SOp4CtmJv8zU8C38vMC6S4b2aGCgHKyugJb9L8fuPQ/viewform" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; text-decoration:none; cursor:pointer; font-family:'Inter',sans-serif; font-weight:800; font-size:15px; color:#F4EBD8; background:#B8492F; border:3px solid #F4EBD8; box-shadow:4px 4px 0 #F4EBD8; padding:9px 22px; letter-spacing:0; min-height:40px; line-height:1.3; transition:transform .12s ease, box-shadow .12s ease, background .12s ease; clip-path:polygon(4px 0,calc(100% - 4px) 0,calc(100% - 4px) 4px,100% 4px,100% 8px,calc(100% + 4px) 8px,calc(100% + 4px) 100%,100% 100%,100% calc(100% + 4px),8px calc(100% + 4px),8px 100%,4px 100%,4px calc(100% - 4px),0 calc(100% - 4px),0 4px,4px 4px);" style-hover="transform:translate(-2px,-2px); box-shadow:6px 6px 0 #F4EBD8; background:#C25233" style-active="transform:translate(1px,1px); box-shadow:2px 2px 0 #F4EBD8">RSVP for Quest Day!!</a>
+        <button type="button" onClick="{{ openWaitlist }}" style="cursor:pointer; font-family:'Inter',sans-serif; font-weight:800; font-size:15px; color:#F4EBD8; background:transparent; border:3px solid #F4EBD8; box-shadow:4px 4px 0 rgba(244,236,214,.35); padding:9px 22px; letter-spacing:0; min-height:40px; line-height:1.3; transition:transform .12s ease, box-shadow .12s ease, background .12s ease; clip-path:polygon(4px 0,calc(100% - 4px) 0,calc(100% - 4px) 4px,100% 4px,100% 8px,calc(100% + 4px) 8px,calc(100% + 4px) 100%,100% 100%,100% calc(100% + 4px),8px calc(100% + 4px),8px 100%,4px 100%,4px calc(100% - 4px),0 calc(100% - 4px),0 4px,4px 4px);" style-hover="transform:translate(-2px,-2px); box-shadow:6px 6px 0 rgba(244,236,214,.55); background:rgba(244,236,214,.12)" style-active="transform:translate(2px,2px); box-shadow:2px 2px 0 rgba(244,236,214,.35)">Join waitlist!!</button>
       </div>
     </div>
     <footer style="position:relative; z-index:5; margin-top:clamp(56px,9vh,90px); padding-top:26px; border-top:2px solid #354B38; display:flex; gap:14px; flex-wrap:wrap; align-items:center; justify-content:center;">
@@ -461,7 +467,7 @@
             <p style="font-family:'Inter',sans-serif; font-weight:300; font-size:14px; color:#B8492F; margin:0;">QUEST LOG UPDATED</p>
             <h2 style="font-family:'Inter',sans-serif; font-weight:800; font-size:24px; line-height:1.15; color:#2A3D2E; margin:0;">You're on the waitlist.</h2>
             <p style="font-size:15px; line-height:1.6; color:#566B57; margin:0;">We'll write to <strong>{{ waitlistEmail }}</strong> before the next pilot starts — ahead of the public round.</p>
-            <button type="button" onClick="{{ closeWaitlist }}" style="cursor:pointer; margin-top:6px; font-family:'Inter',sans-serif; font-weight:300; font-size:13px; color:#F4EBD8; background:#2A3D2E; border:3px solid #2A3D2E; box-shadow:5px 5px 0 rgba(23,58,36,.3); padding:14px 18px; transition:transform .12s ease, box-shadow .12s ease;" style-hover="transform:translate(-2px,-2px); box-shadow:7px 7px 0 rgba(23,58,36,.35)">BACK TO THE MAP</button>
+            <button type="button" onClick="{{ closeWaitlist }}" style="cursor:pointer; margin-top:6px; font-family:'Inter',sans-serif; font-weight:300; font-size:13px; color:#F4EBD8; background:#2A3D2E; border:3px solid #2A3D2E; box-shadow:5px 5px 0 rgba(23,58,36,.3); padding:14px 18px; transition:transform .12s ease, box-shadow .12s ease; clip-path:polygon(5px 0,calc(100% - 5px) 0,calc(100% - 5px) 5px,100% 5px,100% 10px,calc(100% + 5px) 10px,calc(100% + 5px) 100%,100% 100%,100% calc(100% + 5px),10px calc(100% + 5px),10px 100%,5px 100%,5px calc(100% - 5px),0 calc(100% - 5px),0 5px,5px 5px);" style-hover="transform:translate(-2px,-2px); box-shadow:7px 7px 0 rgba(23,58,36,.35)">BACK TO THE MAP</button>
           </div>
         </sc-if>
 
@@ -473,7 +479,7 @@
             <label for="wl-email" style="font-family:'Inter',sans-serif; font-weight:300; font-size:13px; color:#4A6A4D; margin-top:4px;">EMAIL</label>
             <input id="wl-email" ref="{{ emailRef }}" type="email" name="email" required="" autocomplete="email" inputmode="email" placeholder="you@email.com" style="font-family:'Inter',sans-serif; font-size:16px; color:#2A3D2E; background:#F4EBD8; border:3px solid #2A3D2E; padding:14px 15px; width:100%; box-sizing:border-box;" style-focus="outline:none; box-shadow:0 0 0 3px #D5A945">
             <p style="font-size:13px; line-height:1.55; color:#4F6F52; margin:0;">About one email a month. No spam, unsubscribe anytime.</p>
-            <button type="submit" style="cursor:pointer; margin-top:4px; font-family:'Inter',sans-serif; font-weight:300; font-size:14px; color:#F4EBD8; background:#B8492F; border:3px solid #2A3D2E; box-shadow:6px 6px 0 rgba(23,58,36,.3); padding:16px 20px; transition:transform .12s ease, box-shadow .12s ease;" style-hover="transform:translate(-3px,-3px); box-shadow:9px 9px 0 rgba(23,58,36,.35)">CLAIM MY SPOT ▸</button>
+            <button type="submit" style="cursor:pointer; margin-top:4px; font-family:'Inter',sans-serif; font-weight:300; font-size:14px; color:#F4EBD8; background:#B8492F; border:3px solid #2A3D2E; box-shadow:6px 6px 0 rgba(23,58,36,.3); padding:16px 20px; transition:transform .12s ease, box-shadow .12s ease; clip-path:polygon(6px 0,calc(100% - 6px) 0,calc(100% - 6px) 6px,100% 6px,100% 12px,calc(100% + 6px) 12px,calc(100% + 6px) 100%,100% 100%,100% calc(100% + 6px),12px calc(100% + 6px),12px 100%,6px 100%,6px calc(100% - 6px),0 calc(100% - 6px),0 6px,6px 6px);" style-hover="transform:translate(-3px,-3px); box-shadow:9px 9px 0 rgba(23,58,36,.35)">CLAIM MY SPOT ▸</button>
           </form>
         </sc-if>
       </div>
@@ -496,6 +502,8 @@ class Component extends DCLogic {
   perchRef = React.createRef();
   perchBubbleRef = React.createRef();
   hintRef = React.createRef();
+  hint1Ref = React.createRef();
+  hint2Ref = React.createRef();
   stopRef = React.createRef();
   bubbleRef = React.createRef();
   sleepRef = React.createRef();
@@ -506,7 +514,66 @@ class Component extends DCLogic {
   navRef = React.createRef();
   burgerRef = React.createRef();
 
+  typeHints() {
+    const a = this.hint1Ref.current, b = this.hintRef.current, c = this.hint2Ref.current;
+    if (!a || !b || !c || this.mobile || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const t1 = a.textContent, t2 = b.textContent, t3 = c.textContent;
+    a.textContent = '\u00a0'; b.textContent = '\u00a0'; c.textContent = '\u00a0';
+    const steps = [[a, t1], [b, t2], [c, t3]];
+    let si = 0, ci = 0;
+    const tick = () => {
+      if (this.following || !this.mounted) return;
+      const [el, t] = steps[si];
+      ci++; el.textContent = t.slice(0, ci);
+      if (ci >= t.length) { si++; ci = 0; if (si >= steps.length) return; this.hintTimer = setTimeout(tick, 450); return; }
+      this.hintTimer = setTimeout(tick, 34 + Math.random() * 34);
+    };
+    this.hintTimer = setTimeout(tick, 600);
+  }
+
+  setupPolaroids() {
+    const figs = [...document.querySelectorAll('#cohort ol figure')];
+    if (!figs.length || !figs[0].animate || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const fx = [
+      [{ translate: '280px 0', rotate: '14deg', opacity: 0 }, { translate: '-10px 0', rotate: '-3deg', opacity: 1, offset: .7 }, { translate: '0 0', rotate: '0deg', opacity: 1 }, 900, 'cubic-bezier(.2,.8,.3,1)'],
+      [{ scale: '1.45', rotate: '-8deg', opacity: 0 }, { scale: '.94', rotate: '1deg', opacity: 1, offset: .6 }, { scale: '1', rotate: '0deg', opacity: 1 }, 650, 'cubic-bezier(.3,.7,.4,1)'],
+      [{ translate: '0 -140px', rotate: '16deg', opacity: 0 }, { translate: '0 8px', rotate: '-6deg', opacity: 1, offset: .55 }, { translate: '0 0', rotate: '0deg', opacity: 1 }, 1000, 'cubic-bezier(.3,.6,.4,1)'],
+      [{ translate: '-280px 0', rotate: '-14deg', opacity: 0 }, { translate: '10px 0', rotate: '3deg', opacity: 1, offset: .7 }, { translate: '0 0', rotate: '0deg', opacity: 1 }, 900, 'cubic-bezier(.2,.8,.3,1)'],
+      [{ scale: '.6', opacity: 0 }, { scale: '1.08', opacity: 1, offset: .7 }, { scale: '1', opacity: 1 }, 600, 'steps(6, end)'],
+    ];
+    figs.forEach((f) => { f.style.opacity = '0'; });
+    this.polaroidIO = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (!en.isIntersecting) return;
+        const f = en.target; this.polaroidIO.unobserve(f);
+        const k = fx[figs.indexOf(f) % fx.length];
+        const a = f.animate([k[0], k[1], k[2]], { duration: k[3], easing: k[4], fill: 'both' });
+        a.onfinish = () => { f.style.opacity = '1'; a.cancel(); };
+      });
+    }, { threshold: 0.35 });
+    figs.forEach((f) => this.polaroidIO.observe(f));
+    this.polaroidFigs = figs;
+    this.onPolaroidScroll = () => {
+      if (this.polaroidRaf) return;
+      this.polaroidRaf = requestAnimationFrame(() => {
+        this.polaroidRaf = 0;
+        const mid = window.innerHeight / 2;
+        figs.forEach((f, i) => {
+          const r = f.getBoundingClientRect();
+          if (r.bottom < -100 || r.top > window.innerHeight + 100) return;
+          const d = Math.max(-28, Math.min(28, (r.top + r.height / 2 - mid) * -0.07 * (i % 2 ? 1 : -1)));
+          if (f.firstElementChild) f.firstElementChild.style.translate = '0 ' + d.toFixed(1) + 'px';
+        });
+      });
+    };
+    window.addEventListener('scroll', this.onPolaroidScroll, { passive: true });
+    this.onPolaroidScroll();
+  }
+
   componentDidMount() {
+    this.mounted = true;
+    setTimeout(() => this.setupPolaroids(), 400);
+    setTimeout(() => this.typeHints(), 0);
     this.following = false;
     this.pts = [];
     this.shown = 0;
@@ -583,6 +650,9 @@ class Component extends DCLogic {
   componentDidUpdate() { this.applyNav(); }
 
   componentWillUnmount() {
+    this.mounted = false; clearTimeout(this.hintTimer);
+    if (this.polaroidIO) this.polaroidIO.disconnect();
+    if (this.onPolaroidScroll) window.removeEventListener('scroll', this.onPolaroidScroll);
     window.removeEventListener('keydown', this.onKey);
     window.removeEventListener('mousemove', this.onMove);
     window.removeEventListener('resize', this.onResize);
@@ -1111,7 +1181,7 @@ class Component extends DCLogic {
     this.baseLen = 0;
     this.shown = Math.max(0, Math.min(this.total, this.focusLen()));
     if (this.stopRef.current) this.stopRef.current.style.display = 'none';
-    if (this.hintRef.current) this.hintRef.current.textContent = msg || 'SCROLL - WATCH KETCHUP FIND ITS OWN PATH!';
+    if (this.hintRef.current) this.hintRef.current.textContent = msg || 'BUT WATCH KETCHUP FIND ITS OWN PATH!';
   }
 
   frame() {
@@ -1225,11 +1295,14 @@ class Component extends DCLogic {
     const narrow = window.innerWidth < 760;
     const motto = document.querySelector('[data-motto]');
     if (motto) motto.style.display = window.innerWidth < 480 ? 'none' : 'flex';
-    burger.style.display = 'none';
+    burger.style.display = narrow ? 'flex' : 'none';
     burger.setAttribute('aria-expanded', String(narrow && this.state.navOpen));
-    nav.style.cssText = 'display:flex; align-items:center; justify-content:flex-end; gap:clamp(4px,1.6vw,22px);';
-    return;
-    nav.style.cssText = 'position:absolute; left:0; right:0; top:100%; flex-direction:column; align-items:stretch; gap:2px; padding:10px clamp(14px,4vw,48px) 18px; background:rgba(14,36,23,.98); border-bottom:3px solid #354B38; display:' + (this.state.navOpen ? 'flex' : 'none') + ';';
+    const open = this.state.navOpen;
+    nav.style.cssText = narrow
+      ? 'position:absolute; left:0; right:0; top:100%; flex-direction:column; align-items:stretch; gap:0; padding:8px clamp(14px,4vw,48px) 18px; background:rgba(14,36,23,.98); border-bottom:3px solid #354B38; display:' + (open ? 'flex' : 'none') + ';'
+      : 'display:flex; align-items:center; justify-content:flex-end; gap:clamp(10px,1.6vw,22px);';
+    nav.querySelectorAll(':scope > a:not([target])').forEach(el => { el.style.padding = narrow ? '13px 0' : ''; el.style.fontSize = narrow ? '16px' : ''; });
+    const j = nav.querySelector(':scope > a[target]'); if (j) j.style.alignSelf = narrow ? 'flex-start' : '';
   }
 
   mazeGrid() {
@@ -1382,6 +1455,8 @@ class Component extends DCLogic {
       perchRef: this.perchRef,
       perchBubbleRef: this.perchBubbleRef,
       hintRef: this.hintRef,
+      hint1Ref: this.hint1Ref,
+      hint2Ref: this.hint2Ref,
       stopRef: this.stopRef,
       bubbleRef: this.bubbleRef,
       sleepRef: this.sleepRef,
