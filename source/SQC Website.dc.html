@@ -1301,8 +1301,8 @@ class Component extends DCLogic {
     nav.style.cssText = narrow
       ? 'position:absolute; left:0; right:0; top:100%; flex-direction:column; align-items:stretch; gap:0; padding:8px clamp(14px,4vw,48px) 18px; background:rgba(14,36,23,.98); border-bottom:3px solid #354B38; display:' + (open ? 'flex' : 'none') + ';'
       : 'display:flex; align-items:center; justify-content:flex-end; gap:clamp(10px,1.6vw,22px);';
-    nav.querySelectorAll(':scope > a:not([target])').forEach(el => { el.style.padding = narrow ? '13px 0' : ''; el.style.fontSize = narrow ? '16px' : ''; });
-    const j = nav.querySelector(':scope > a[target]'); if (j) j.style.alignSelf = narrow ? 'flex-start' : '';
+    nav.querySelectorAll(':scope > a:not([target])').forEach(el => { el.style.padding = narrow ? '20px 0' : ''; el.style.fontSize = narrow ? '16px' : ''; });
+    const j = nav.querySelector(':scope > a[target]'); if (j) { j.style.alignSelf = narrow ? 'flex-start' : ''; j.style.marginTop = narrow ? '18px' : ''; }
   }
 
   mazeGrid() {
